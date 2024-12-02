@@ -1,6 +1,8 @@
 #include "../../.raylib/raylib.h"
 
-int main(){
+#include "../include/spritesheet.hh"
 
+int main(){
+    
     return 0;
 }
