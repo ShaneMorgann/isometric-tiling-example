@@ -6,10 +6,8 @@ SRC_ROOT := ../$(shell basename $(realpath ../))
 BIN := bin
 SRC := $(shell find $(SRC_ROOT)/src -name "*.cc")
 INCLUDE := $(shell find $(SRC_ROOT)/include -name "*.hh")
-RAYLIB := ../.raylib
-LIBLITE := $(SRC_ROOT)/lib/*.hh
 
-LIBRARIES :=
+RAYLIB := ../.raylib
 
 # Name of executable
 EXECUTABLE := main
@@ -27,7 +25,7 @@ run: build
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)
-	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -I$(LIBLITE) -I$(RAYLIB)/include -L$(RAYLIB)/lib $^ -o $@ $(LIBRARIES)
+	$(CXX) $(CXX_FLAGS) -I$(SRC_ROOT)/include -I$(RAYLIB)/include $^ -o $@
 
 $(RAYLIB):
 	@echo "Downloading raylib..."
