@@ -5,6 +5,7 @@
 #include "../include/spritesheet.hh"
 #include "../include/block.hh"
 #include "../include/render.hh"
+#include "../include/util.hh"
 
 
 constexpr Map map;
@@ -22,7 +23,6 @@ int main(){
     };
 
     while (!WindowShouldClose()){
-        
         BeginDrawing();
         ClearBackground(config::BG_CLEAR_COLOR);
 

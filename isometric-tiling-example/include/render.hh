@@ -1,7 +1,7 @@
 #pragma once
 
 #include "raylib.h"
-#include "utils.hh"
+#include "util.hh"
 #include "block.hh"
 #include "map.hh"
 #include "window.hh"
