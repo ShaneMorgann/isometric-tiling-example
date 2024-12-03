@@ -13,6 +13,7 @@ namespace config{
 
     // game logic
     constexpr int TARGET_FPS = 120;
+    constexpr int SPRITE_SCALE = 2;
 
     // map dimensions
     constexpr int MAP_WIDTH = 10;
