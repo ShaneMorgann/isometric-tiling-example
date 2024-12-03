@@ -1,7 +1,7 @@
 #pragma once
 
 #include "constants.hh"
-#include <raylib.h>
+#include "raylib.h"
 
 struct Window{
     static constexpr int width = config::WINDOW_WIDTH;
