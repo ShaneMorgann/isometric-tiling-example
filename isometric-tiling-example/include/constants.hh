@@ -30,5 +30,4 @@ namespace config{
     constexpr float DEBUG_LINE_THICKNESS = 3.0f;
     constexpr Color DEBUG_LINE_COLOR = MAGENTA;
 
-
 }
