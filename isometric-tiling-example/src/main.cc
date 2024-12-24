@@ -10,7 +10,7 @@
 
 constexpr Map map;
 constexpr Window window;
-Spritesheet spritesheet("../data/isometric-spritesheet.png", config::SPRITE_SIZE);
+Spritesheet spritesheet("../data/sprites/isometric-spritesheet.png", config::SPRITE_SIZE);
 
 int main(){
 
