@@ -1,44 +1,43 @@
 #include "../../.raylib/raylib.h"
 
-#include "../include/map.hh"
-#include "../include/window.hh"
+#include "../include/constants.hh"
 #include "../include/spritesheet.hh"
 #include "../include/block.hh"
 #include "../include/render.hh"
-#include "../include/util.hh"
 
-
-constexpr Map map;
-constexpr Window window;
-Spritesheet spritesheet("../data/sprites/isometric-spritesheet.png", config::SPRITE_SIZE);
+Spritesheet spritesheet("../data/sprites/isometric-spritesheet.png", config::sprite.size);
 
 int main(){
 
-    InitWindow(window.width, window.height, window.title);
-    SetTargetFPS(window.targetFPS);
+    InitWindow(config::window.width, config::window.height, config::window.title);
+    SetTargetFPS(config::window.targetFPS);
 
     Block block{
-        spritesheet.selectSpriteUniformSpacing(0, 0),
-        spritesheet.spriteSize
+        spritesheet.selectSpriteUniformSpacing(0, 0)
     };
 
     while (!WindowShouldClose()){
-        BeginDrawing();
-        ClearBackground(config::BG_CLEAR_COLOR);
 
-        for(int x = 0; x < map.width; x++){
-            for(int y = 0; y < map.height; y++){
-                render::drawBlock(&window, &block, &map, Vector2i{x,y});
+        BeginDrawing();
+        ClearBackground(config::window.backgroundColor);
+
+        for(int x = 0; x < config::map.width; x++){
+            for(int y = 0; y < config::map.height; y++){
+
+                float xFloat = static_cast<float>(x);
+                float yFloat = static_cast<float>(y);
+
+                render::drawBlock(&block, Vector2{xFloat,yFloat});
             }
         }
 
         // debug ui
-        if(config::ENABLE_FPS_UI){
-            DrawFPS(config::FPS_POSITION_X, config::FPS_POSITION_Y);
+        if(config::debug.enableFPS){
+            DrawFPS(config::debug.positionX, config::debug.positionY);
         }
-        if(config::ENABLE_DEBUG_UI){
-            DrawLineEx({window.windowCenterPoint.x, 0}, {window.windowCenterPoint.x, window.height}, config::DEBUG_LINE_THICKNESS, config::DEBUG_LINE_COLOR);
-            DrawLineEx({0, window.windowCenterPoint.y}, {window.width, window.windowCenterPoint.y}, config::DEBUG_LINE_THICKNESS, config::DEBUG_LINE_COLOR);
+        if(config::debug.enableCenterCross){
+            DrawLineEx({config::window.midPoint.x, 0}, {config::window.midPoint.x, static_cast<float>(config::window.height)}, config::debug.centerCrossLineWeight, config::debug.centerCrossLineColor);
+            DrawLineEx({0, config::window.midPoint.y}, {static_cast<float>(config::window.width), config::window.midPoint.y}, config::debug.centerCrossLineWeight, config::debug.centerCrossLineColor);
         }
 
         EndDrawing();
