@@ -1,33 +1,55 @@
 #pragma once
 
+#include "coordinate-mapping.hh"
 #include "raylib.h"
 
 namespace config{
 
+    /* TODO:
+        - Due to this being a simple example project, this will eventually become a global reference for values
+        - An option to populate these values with a JSON file will eventually be added
+            - Placeholder values will remain, but can be overriden with the presence of a configuration file
+        
+        - These changes will also require constants.hh to be changed as these values will have the ability to change
+    */
+
     // window config
-    constexpr int WINDOW_WIDTH = 1920;
-    constexpr int WINDOW_HEIGHT = 1080;
-    constexpr const char* WINDOW_TITLE = ("Isometric-Tiling-Example");
-    constexpr Color BG_CLEAR_COLOR = BLACK;
+    inline struct {
+        int width = 1920;
+        int height = 1080;
+        Vector2 midPoint{width * 0.5f, height * 0.5f};
 
-    // game logic
-    constexpr int TARGET_FPS = 120;
+        const char* title = ("Isometric-Tiling-Example");
 
-    // map dimensions
-    constexpr int MAP_WIDTH = 15;
-    constexpr int MAP_HEIGHT = 15;
+        Color backgroundColor = BLACK;
+        int targetFPS = 120;
+    } window;
+    
+    // map config
+    inline struct{
+        int width = 10;
+        int height = 10;
+        Vector2 originOffset = translations::mapCenterOffset();
+    } map;
 
-    // sprite properties
-    constexpr int SPRITE_SIZE = 32;
-    constexpr float SPRITE_SCALE = 3;
+    // sprite config
+    inline struct{
+        int size = 32;
+        float scale = 4;
+        float sizeScale = size * scale;
+        float sizeHalfScale = sizeScale * 0.5f;
+        float sizeQuarterScale = sizeScale * 0.25f;
+    } sprite;
 
-    // debug
-    constexpr bool ENABLE_FPS_UI = true;
-    constexpr int FPS_POSITION_X = 5;
-    constexpr int FPS_POSITION_Y = 5;
+    // debug config
+    inline struct{
+        bool enableFPS = true;
+        int positionX = 5;
+        int positionY = 5;
 
-    constexpr bool ENABLE_DEBUG_UI = false;
-    constexpr float DEBUG_LINE_THICKNESS = 3.0f;
-    constexpr Color DEBUG_LINE_COLOR = MAGENTA;
+        bool enableCenterCross = false;
+        float centerCrossLineWeight = 2.0f;
+        Color centerCrossLineColor = MAGENTA;
+    } debug;
 
 }
