@@ -4,6 +4,7 @@
 #include "../include/spritesheet.hh"
 #include "../include/block.hh"
 #include "../include/render.hh"
+#include "../include/debug.hh"
 
 Spritesheet spritesheet("../data/sprites/isometric-spritesheet.png", config::sprite.size);
 
@@ -32,13 +33,7 @@ int main(){
         }
 
         // debug ui
-        if(config::debug.enableFPS){
-            DrawFPS(config::debug.positionX, config::debug.positionY);
-        }
-        if(config::debug.enableCenterCross){
-            DrawLineEx({config::window.midPoint.x, 0}, {config::window.midPoint.x, static_cast<float>(config::window.height)}, config::debug.centerCrossLineWeight, config::debug.centerCrossLineColor);
-            DrawLineEx({0, config::window.midPoint.y}, {static_cast<float>(config::window.width), config::window.midPoint.y}, config::debug.centerCrossLineWeight, config::debug.centerCrossLineColor);
-        }
+        debug::drawElements();
 
         EndDrawing();
     }
