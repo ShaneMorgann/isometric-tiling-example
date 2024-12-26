@@ -1,6 +1,7 @@
 #include "../include/spritesheet.hh"
 
 Spritesheet::Spritesheet(const char* path, float size){
+
         Spritesheet::image = LoadImage(path);
         Spritesheet::spriteSize = size;
         Spritesheet::spriteSizeWidth = size;
@@ -9,6 +10,7 @@ Spritesheet::Spritesheet(const char* path, float size){
 }
 
 Spritesheet::Spritesheet(const char* path, float width, float height){
+
         Spritesheet::image = LoadImage(path);
         Spritesheet::spriteSizeWidth = width;
         Spritesheet::spriteSizeHeight = height;
@@ -16,6 +18,7 @@ Spritesheet::Spritesheet(const char* path, float width, float height){
 }
 
 Texture2D Spritesheet::selectSpriteUniformSpacing(int x, int y){
+
         Rectangle rect{
                 Spritesheet::spriteSize * float(x),
                 Spritesheet::spriteSize * float(y),
@@ -26,5 +29,6 @@ Texture2D Spritesheet::selectSpriteUniformSpacing(int x, int y){
 }
 
 Spritesheet::~Spritesheet(){
+        
         UnloadImage(Spritesheet::image);
 }
