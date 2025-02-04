@@ -1,6 +1,6 @@
 #pragma once
 
-#include "raylib.h"
+#include "../extern/raylib.h"
 
 namespace translations {
     

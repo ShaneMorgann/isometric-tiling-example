@@ -1,4 +1,4 @@
 .vscode/
-.build/bin/main
-.raylib/
-isometric-tiling-example/lib/echotrail.hh
+.build/bin/
+.build/data/
+isometric-tiling-example/extern/

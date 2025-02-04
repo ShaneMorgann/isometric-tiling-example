@@ -1,4 +1,4 @@
-#include "../../.raylib/raylib.h"
+#include "../extern/raylib.h"
 
 #include "../include/constants.hh"
 #include "../include/spritesheet.hh"

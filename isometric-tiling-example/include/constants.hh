@@ -1,7 +1,7 @@
 #pragma once
 
+#include "../extern/raylib.h"
 #include "coordinate-mapping.hh"
-#include "raylib.h"
 
 namespace config{
 

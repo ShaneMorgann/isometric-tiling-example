@@ -1,5 +1,5 @@
 
-#include <raylib.h>
+#include "../extern/raylib.h"
 #include "../include/constants.hh"
 
 #include "../include/coordinate-mapping.hh"
