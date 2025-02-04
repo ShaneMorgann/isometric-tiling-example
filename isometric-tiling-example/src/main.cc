@@ -6,7 +6,7 @@
 #include "../include/render.hh"
 #include "../include/debug.hh"
 
-Spritesheet spritesheet("../data/sprites/isometric-spritesheet.png", config::sprite.size);
+Spritesheet spritesheet(config::spritesheet.spritesheetPath, config::spritesheet.spriteSize);
 
 int main(){
 
@@ -14,7 +14,7 @@ int main(){
     SetTargetFPS(config::window.targetFPS);
 
     Block block{
-        spritesheet.selectSpriteUniformSpacing(0, 0)
+        spritesheet.selectSpriteUniformSpacing(config::spritesheet.spritesheetTileCoords.x, config::spritesheet.spritesheetTileCoords.y)
     };
 
     while (!WindowShouldClose()){

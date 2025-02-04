@@ -2,6 +2,7 @@
 
 #include "../extern/raylib.h"
 #include "coordinate-mapping.hh"
+#include "util.hh"
 
 namespace config{
 
@@ -40,6 +41,15 @@ namespace config{
         float sizeHalfScale = sizeScale * 0.5f;
         float sizeQuarterScale = sizeScale * 0.25f;
     } sprite;
+
+    // spritesheet config
+    inline struct
+    {
+        const char* spritesheetPath = ("../data/sprites/isometric-spritesheet.png");
+        int spriteSize = 32;
+        Vector2i spritesheetTileCoords = {0,0};
+    } spritesheet;
+    
 
     // debug config
     inline struct{
