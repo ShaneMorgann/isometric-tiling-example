@@ -1,19 +1,21 @@
 # Isometric Tiling Example
-The main purpose of this project is to become more familiar with C++ and the Raylib library while also learning how to work with isometric perspective grid of sprites.
+The purpose of this project is to allow me to become more familiar with C++ and the Raylib library while also learning how to work with isometric perspective grid of sprites. This project will ultimately serve as a gallery of features when using tiling sprites in an isometric perspective.
+
+The code is currently heavily broken up using namespaces. While I understand that this is not necessarily a good coding convention, it makes it easier for me to recognize individual concepts while rapily testing different solutions. It will also influnence the final structure of the project when refactored.
 
 ## Features
 - [x] Render an isometric perspective grid of tiles to the screen
 - [ ] Give user feedback when hovering on a tile
 - [ ] Zoom in and out of the map
-- [ ] Pan the map location within the window
-- [ ] UI for debug and configuration options
+- [ ] Pan the map within the window
 - [ ] Import config from file
+- [ ] UI for debug and configuration options
 - [ ] Render custom map layouts
 - [ ] Sound cue when hovering on a tile
 
 ## Building
 
-I currently only have a simple build process for Windows, but I will be adding MacOS and Linux in the future.
+Currently, there is only a build process for Windows, but I will be adding MacOS and Linux in the future.
 
 ### Windows :
 **Required:**
@@ -38,7 +40,17 @@ make download_raylib
 
 4. Build and Run
 ````
+Build
+$ make
+
+Run
+$ make run
+
+# Build then Run
 make debug
+
+# Delete executable
+make clean
 ````
 
 ## Usage
