@@ -40,11 +40,11 @@ make download_raylib
 
 4. Build and Run
 ````
-Build
-$ make
+# Build
+ make
 
-Run
-$ make run
+# Run
+ make run
 
 # Build then Run
 make debug
