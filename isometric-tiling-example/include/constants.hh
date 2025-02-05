@@ -16,8 +16,8 @@ namespace config{
 
     // window config
     inline struct {
-        int width = 1920;
-        int height = 1080;
+        int width = 1280;
+        int height = 720;
         Vector2 midPoint{width * 0.5f, height * 0.5f};
 
         const char* title = ("Isometric-Tiling-Example");
@@ -28,8 +28,8 @@ namespace config{
     
     // map config
     inline struct{
-        int width = 10;
-        int height = 10;
+        int width = 8;
+        int height = 8;
         Vector2 originOffset = translations::mapCenterOffset();
     } map;
 
